@@ -1,0 +1,895 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://seongzzang.github.io/resume/index.html?lang=ko"
+    />
+    <meta property="og:title" content="Seonghye Yang's Resume" />
+    <meta property="og:image" content="image/OGimage.png" />
+    <meta property="og:description" content="This is Seonghye Yang's resume." />
+    <meta property="og:site_name" content="SCC Portfolio" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <title>Seonghye Yang's Resume</title>
+    <style>
+      :root {
+        --main-bg-color: #E2ECD9;
+        --main-font-color: #1d1f20;
+        --main-organization-color: #799E68;
+        --sub-organization-color: #D3E7C2;
+        --accent-color: #97C97A;
+        --border-color: #799E68;
+        --main-svg-filter: invert(66%) sepia(20%) saturate(581%) hue-rotate(58deg) brightness(91%) contrast(91%);
+        font-family: "NanumSquareOTF-Regular", Helvetica;
+        font-weight: 400;
+        --card-margin: 6.1rem 6.8rem 0;
+        --card-height: 30.1rem;
+        --card-border-radius: 0.9rem;
+        --text-color-secondary: #4a4a4a;
+      }
+
+      body {
+        margin: 0;
+        background-image: url("image/bg.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        /* 모바일 성능 개선 */
+        overflow-x: hidden;
+        /* 가로 스크롤 방지 */
+      }
+
+      .project-card {
+        margin: var(--card-margin);
+        height: var(--card-height);
+        border-radius: var(--card-border-radius);
+        background: var(--main-bg-color);
+        box-shadow: 0 0.3rem 1.3rem 0 rgba(0, 0, 0, 0.2);
+        display: grid;
+        grid-template-areas:
+          "top top top"
+          "name name image"
+          "icons tool image"
+          "bottom bottom bottom";
+        grid-template-rows: 3.1rem 15.1rem 8.3rem 3.1rem;
+        grid-template-columns: 15.6rem 15.6rem 1fr;
+        overflow: hidden;
+      }
+
+      .project-card > * {
+        background-color: var(--main-bg-color);
+        border-right: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .project-card::before,
+      .project-card::after {
+        content: "";
+        background-color: var(--main-bg-color);
+      }
+
+      .project-card::before {
+        grid-area: top;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .project-card::after {
+        grid-area: bottom;
+        border-top: 1px solid var(--border-color);
+        border-bottom: none;
+      }
+
+      .project-card-name {
+        grid-area: name;
+        padding: 0 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+        border-left: none;
+      }
+
+      .project-card-image {
+        grid-area: image;
+        padding: 0.6rem;
+        border-right: none;
+        border-bottom: none;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .project-image {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+
+      .project-card-icons {
+        grid-area: icons;
+        padding: 0.6rem;
+        border-left: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 1.5rem;
+        border-bottom: none;
+        gap: 0.6rem;
+      }
+
+      .project-row,
+      .project-github-link {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      .project-github-link a {
+        color: var(--main-font-color);
+        font-size: 0.6rem;
+        text-decoration: none;
+      }
+
+      .project-github-link a:hover {
+        text-decoration: underline;
+      }
+
+      .project-icon {
+        width: 1.3rem;
+        height: 1.3rem;
+      }
+
+      .project-content-detail {
+        font-size: 0.6rem;
+      }
+
+      .project-card-tool {
+        grid-area: tool;
+        padding: 0.6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.8rem;
+        border-bottom: none;
+      }
+
+      .project-title {
+        color: var(--main-font-color);
+        font-size: 1.8rem;
+        line-height: normal;
+      }
+
+      .project-content {
+        color: var(--text-color-secondary);
+        font-size: 0.7rem;
+        line-height: 1.4rem;
+      }
+
+      .project-content-detail {
+        color: var(--text-color-secondary);
+        font-size: 0.6rem;
+        line-height: normal;
+      }
+
+      .project-tool-detail {
+        color: var(--main-font-color);
+        font-size: 0.6rem;
+        line-height: normal;
+      }
+
+      .project-tool-point {
+        width: 0.5rem;
+        height: 0.5rem;
+      }
+
+      .project-pictures {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin: 3.1rem;
+        overflow: hidden;
+        height: 25rem;
+      }
+
+      .project-picture-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      .project-picture {
+        position: absolute;
+        transition: all 0.5s ease-in-out;
+        width: 34rem;
+        height: 19.1rem;
+      }
+
+      .project-picture.side {
+        transform: scale(0.75) translateX(-50%);
+        z-index: 1;
+        opacity: 0.3;
+      }
+
+      .project-picture.side.right {
+        transform: scale(0.75) translateX(50%);
+      }
+
+      .project-picture.center {
+        z-index: 2;
+        transform: scale(1) translateX(0);
+        opacity: 1;
+      }
+
+      .project-div-image {
+        width: 100%;
+        height: 100%;
+        display: block;
+        border-radius: 0.9rem;
+        object-fit: cover;
+      }
+
+      .project-prev,
+      .project-next {
+        position: absolute;
+        cursor: pointer;
+        z-index: 3;
+      }
+
+      .project-prev {
+        left: 0.6rem;
+      }
+
+      .project-next {
+        right: 0.6rem;
+      }
+
+      .detail-card {
+        border-top: 1px solid var(--border-color);
+        display: grid;
+        grid-template-areas:
+          "a list ts b"
+          "c d d e";
+        grid-template-columns: 6.8rem 1fr 1fr 6.8rem;
+        grid-template-rows: min-content 2.1rem;
+        overflow: hidden;
+      }
+
+      .detail-card > * {
+        border-right: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .detail-card-a {
+        grid-area: a;
+      }
+
+      .detail-card-b {
+        grid-area: b;
+        border-right: none;
+      }
+
+      .detail-card-c {
+        grid-area: c;
+      }
+
+      .detail-card-d {
+        grid-area: d;
+      }
+
+      .detail-card-e {
+        grid-area: e;
+        border-right: none;
+      }
+
+      .detail-card-list {
+        grid-area: list;
+        padding: 2.1rem;
+        border-right: 1px solid var(--border-color);
+        overflow: hidden;
+      }
+
+      .detail-card-wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .detail-card-title {
+        color: var(--main-font-color);
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+      }
+
+      .detail-card-ts {
+        grid-area: ts;
+        padding: 3.1rem;
+        font-size: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .detail-card-title {
+        display: inline-flex;
+        padding: 0.3rem 1.3rem;
+        justify-content: center;
+        align-items: center;
+        gap: 0.8rem;
+        border-radius: 1.8rem;
+        font-size: 0.8rem;
+        background: var(--accent-color);
+        color: var(--main-font-color);
+        width: fit-content;
+        margin: 0.9rem 0;
+      }
+
+      .project-card-detail {
+        color: var(--main-font-color);
+        font-size: 0.8rem;
+        line-height: normal;
+      }
+
+      .project-card-ex {
+        color: var(--text-color-secondary);
+        font-family: var(--font-family-main);
+        font-size: 0.8rem;
+        line-height: normal;
+        margin: 0.3rem 0 0.8rem 1.1rem;
+      }
+
+      @media (max-width: 64rem) {
+        /* 태블릿 대응 추가 */
+        .project-card {
+          margin: 3rem;
+          height: auto;
+          grid-template-areas:
+            "top top"
+            "name image"
+            "icons tool"
+            "bottom bottom";
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: auto;
+        }
+      }
+
+      @media (max-width: 48rem) {
+        .project-card {
+          margin: 1.3rem;
+          grid-template-areas:
+            "image"
+            "name"
+            "icons"
+            "tool";
+          grid-template-rows: auto auto auto auto;
+          grid-template-columns: 1fr;
+          height: auto;
+        }
+
+        .project-card-image {
+          grid-area: image;
+          width: 100%;
+          height: auto;
+        }
+
+        .project-card-name {
+          grid-area: name;
+          padding: 1rem;
+          /* 전체적인 패딩 추가 */
+        }
+
+        .project-content {
+          padding: 0 1rem;
+          /* 좌우 여백 추가 */
+          font-size: 0.9rem;
+          /* 글자 크기 조정 */
+          line-height: 1.5;
+          /* 줄 간격 조정 */
+        }
+
+        .project-card-icons {
+          grid-area: icons;
+        }
+
+        .project-card-tool {
+          grid-area: tool;
+        }
+
+        .project-card-name,
+        .project-card-image,
+        .project-card-icons,
+        .project-card-tool {
+          padding: 0.6rem;
+          border-right: none;
+          border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-card-tool {
+          border-bottom: none;
+        }
+
+        .project-card-icons,
+        .project-card-tool {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.8rem;
+        }
+
+        .project-row {
+          width: 100%;
+        }
+
+        .project-pictures {
+          margin: 1.5rem;
+        }
+
+        .project-picture-wrapper {
+          width: 100%;
+        }
+
+        .project-div-image {
+          width: 80%;
+          height: auto;
+          display: block;
+          margin: 0 auto;
+          border-radius: 0.9rem;
+        }
+
+        .project-picture.side {
+          display: none;
+        }
+
+        .project-picture.center {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: auto;
+        }
+
+        .detail-card {
+          grid-template-areas:
+            "a list b"
+            "c ts d"
+            "e e e";
+          grid-template-columns: 1rem 1fr 1rem;
+          grid-template-rows: auto auto 2.1rem;
+        }
+
+        .detail-card-d {
+          grid-area: d;
+          border-right: none;
+        }
+
+        .detail-card-list,
+        .detail-card-ts {
+          padding: 1.5rem;
+        }
+      }
+
+      /* 포커스 가능한 요소에 대한 스타일 일관성 */
+      a:focus,
+      button:focus,
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: 2px solid var(--highlight-color);
+        outline-offset: 2px;
+      }
+
+      /* 접근성 개선을 위한 추가 스타일 */
+      .project-content,
+      .project-content-detail,
+      .project-card-ex {
+        color: var(--text-color-secondary);
+        font-size: 0.8rem;
+        line-height: normal;
+      }
+
+      .project-content {
+        font-size: 0.7rem;
+        line-height: 1.4rem;
+      }
+
+      .project-content-detail {
+        font-size: 0.6rem;
+      }
+        .project-icon,
+        .project-tool-point,
+        .project-prev,
+        .project-next {
+            filter: var(--main-svg-filter);
+        }
+    </style>
+  </head>
+
+  <body>
+    <div class="background">
+      <div class="project-card">
+        <div class="project-card-name">
+          <div class="project-title">Early Edition Service / ScrapMaster Premium Mobile Viewer</div>
+          <div class="project-content">
+            A paid newspaper service that lets subscribers read the next day's
+            paper on PC and mobile one day before its publication date. I was
+            responsible for the overall development and operation of nine apps.
+            I migrated Objective-C apps to SwiftUI and handled UI updates and
+            maintenance for new iOS releases. I also set up Fastlane and a CI/CD
+            pipeline and improved image caching. As a result, image loading
+            efficiency improved by 21%, and better usability led to an 11%
+            increase in users.
+          </div>
+        </div>
+        <div class="project-card-image">
+          <img src="image/p1.png" class="project-image" />
+        </div>
+        <div class="project-card-icons">
+          <div class="project-row">
+            <img src="image/period.svg" class="project-icon" />
+            <div class="project-content-detail">
+              25.01 ~ Present / 1 yr 9 mos (ongoing)
+            </div>
+          </div>
+          <div class="project-row">
+            <img src="image/people.svg" class="project-icon" />
+            <div class="project-content-detail">2 people</div>
+          </div>
+          <div class="project-row">
+            <img src="image/role.svg" class="project-icon" />
+            <div class="project-content-detail">
+              1 iOS Developer / 1 Designer
+            </div>
+          </div>
+        </div>
+        <div class="project-card-tool">
+          <div class="project-row">
+            <img src="image/point.svg" class="project-tool-point" />
+            <div class="project-tool-detail">
+              Swift, SwiftUI, MVVM, async/await
+            </div>
+          </div>
+          <div class="project-row">
+            <img src="image/point.svg" class="project-tool-point" />
+            <div class="project-tool-detail">
+              Alamofire, NSCache, UserDefaults, Keychain
+            </div>
+          </div>
+          <div class="project-row">
+            <img src="image/point.svg" class="project-tool-point" />
+            <div class="project-tool-detail">Fastlane, TestFlight</div>
+          </div>
+          <div class="project-row">
+            <img src="image/point.svg" class="project-tool-point" />
+            <div class="project-tool-detail">Git, Zeplin, Slack</div>
+          </div>
+        </div>
+      </div>
+      <div class="project-pictures">
+        <img
+          class="project-prev"
+          src="image/prev.svg"
+          onclick="moveImages('prev')"
+        />
+        <div class="project-picture-wrapper">
+          <div class="project-picture side" id="image1">
+              <img src="image/p1-detail1.png" class="project-div-image" />
+          </div>
+          <div class="project-picture center" id="image2">
+              <img src="image/p1-detail2.png" class="project-div-image" />
+          </div>
+          <div class="project-picture side" id="image3">
+              <img src="image/p1-detail3.png" class="project-div-image" />
+          </div>
+        </div>
+        <img
+          class="project-next"
+          src="image/next.svg"
+          onclick="moveImages('next')"
+        />
+      </div>
+      <div class="detail-card">
+        <div class="detail-card-a"></div>
+        <div class="detail-card-b"></div>
+        <div class="detail-card-c"></div>
+        <div class="detail-card-d"></div>
+        <div class="detail-card-e"></div>
+        <div class="detail-card-list">
+          <div class="detail-card-wrapper">
+            <div class="detail-card-title">
+              Migration from Objective-C to SwiftUI
+            </div>
+            <div class="project-row">
+              <img src="image/point.svg" class="project-tool-point" />
+              <div class="project-card-detail">
+                Simplified code with declarative UI, improving readability and
+                development speed
+              </div>
+            </div>
+            <div class="project-row">
+              <img src="image/point.svg" class="project-tool-point" />
+              <div class="project-card-detail">
+                Made it easier to adopt UI changes and new APIs with each iOS
+                update
+              </div>
+            </div>
+            <div class="project-row">
+              <img src="image/point.svg" class="project-tool-point" />
+              <div class="project-card-detail">
+                Unified legacy Objective-C code into Swift for better code
+                comprehension
+              </div>
+            </div>
+            <div class="project-row">
+              <img src="image/point.svg" class="project-tool-point" />
+              <div class="project-card-detail">
+                Separated logic from views with MVVM and state-driven UI, making
+                testing and extension easier
+              </div>
+            </div>
+            <div class="detail-card-title">Early Edition Page Viewer</div>
+            <div class="project-row">
+              <img src="image/point.svg" class="project-tool-point" />
+              <div class="project-card-detail">
+                Early edition newspaper PDFs viewable on mobile from 7 PM the
+                day before publication
+              </div>
+            </div>
+            <div class="project-row">
+              <img src="image/point.svg" class="project-tool-point" />
+              <div class="project-card-detail">
+                Swipe through print articles just like reading articles on a
+                phone
+              </div>
+            </div>
+            <div class="project-row">
+              <img src="image/point.svg" class="project-tool-point" />
+              <div class="project-card-detail">
+                Tapping an article draws a path around its area and navigates
+                to that article
+              </div>
+            </div>
+            <div class="project-row">
+              <img src="image/point.svg" class="project-tool-point" />
+              <div class="project-card-detail">
+                Calendar-based date picker to view articles from any
+                publication date
+              </div>
+            </div>
+            <div class="project-row">
+              <img src="image/point.svg" class="project-tool-point" />
+              <div class="project-card-detail">
+                Zoom in/out for user convenience
+              </div>
+            </div>
+            <div class="project-row">
+              <img src="image/point.svg" class="project-tool-point" />
+              <div class="project-card-detail">
+                User-facing error handling, such as moving to the next screen
+                when no articles exist for the selected date
+              </div>
+            </div>
+            <div class="detail-card-title">Article Scrap Feature</div>
+            <div class="project-row">
+              <img src="image/point.svg" class="project-tool-point" />
+              <div class="project-card-detail">
+                Collect scrapped articles in one place and browse the list
+              </div>
+            </div>
+            <div class="project-row">
+              <img src="image/point.svg" class="project-tool-point" />
+              <div class="project-card-detail">
+                Highlight selected words in the scrapped article detail view
+              </div>
+            </div>
+            <div class="project-row">
+              <img src="image/point.svg" class="project-tool-point" />
+              <div class="project-card-detail">
+                Article image zoom (pinch-to-zoom, faster loading via image
+                caching)
+              </div>
+            </div>
+            <div class="project-row">
+              <img src="image/point.svg" class="project-tool-point" />
+              <div class="project-card-detail">
+                Find articles through search
+              </div>
+            </div>
+            <div class="project-row">
+              <img src="image/point.svg" class="project-tool-point" />
+              <div class="project-card-detail">
+                Scrap data synced with web/PC across devices
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="detail-card-ts">
+          <div class="detail-card-title">Image Caching Issue</div>
+          <div class="project-row">
+            <img src="image/point.svg" class="project-tool-point" />
+            <div class="project-card-detail">Problem Identification</div>
+          </div>
+          <div class="project-card-ex">
+            Every time a newspaper page image was opened, a new network request
+            was sent and memory usage increased. Even when revisiting the same
+            image, it had to load again, interrupting the reading flow, and
+            screens with many images put heavy pressure on memory.
+          </div>
+
+          <div class="project-row">
+            <img src="image/point.svg" class="project-tool-point" />
+            <div class="project-card-detail">Problem Solution</div>
+          </div>
+          <div class="project-card-ex">
+            I implemented an NSCache-based in-memory image cache so that
+            already-loaded images are reused immediately without new requests.
+            I set limits on cache size and item count to control memory usage,
+            and let the system purge the cache automatically on memory
+            warnings. As a result, image memory usage dropped by 21% and
+            loading became faster when revisiting images. Through this process,
+            I came to understand the importance of image caching strategies and
+            memory management, and gained the ability to identify and fix
+            performance issues more quickly on image-heavy screens.
+          </div>
+          <div class="detail-card-title">Article Path Issue</div>
+          <div class="project-row">
+            <img src="image/point.svg" class="project-tool-point" />
+            <div class="project-card-detail">Problem Identification</div>
+          </div>
+          <div class="project-card-ex">
+            When a user selected an article on a newspaper page, it was
+            difficult to accurately define the article's area (path). In
+            particular, zooming in and out of the page image constantly changed
+            the displayed image's size and position, so the article bounds
+            received from the server no longer matched the article's actual
+            position.
+          </div>
+
+          <div class="project-row">
+            <img src="image/point.svg" class="project-tool-point" />
+            <div class="project-card-detail">Problem Solution</div>
+          </div>
+          <div class="project-card-ex">
+            I aligned the article bounds from the server with the image display
+            area that SwiftUI calculates automatically when laying out the
+            image, so the selected article's path is accurately drawn even
+            while zoomed in or out. Along with other usability improvements to
+            the viewer screen, this led to an 11% increase in users. Through
+            this process, I came to understand the difference between image and
+            screen coordinate systems, and gained the ability to identify and
+            resolve coordinate issues more quickly on screens with zooming or
+            layout changes.
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        setLanguage();
+
+        if (document.getElementById("image1")) {
+          updateImages();
+        }
+      });
+
+      function setLanguage() {
+        const lang = getUrlParameter("lang") || "ko";
+        const mode = getUrlParameter("mode");
+        const currentPage = window.location.pathname.split("/").pop();
+        const isCorrectPage =
+          (lang === "en" &&
+            (currentPage === "project_en.html" ||
+              currentPage === "project2_en.html")) ||
+          (lang === "ko" &&
+            (currentPage === "project.html" ||
+              currentPage === "project2.html"));
+
+        if (!isCorrectPage) {
+          const targetPage =
+            lang === "en"
+              ? currentPage === "project2.html" ||
+                currentPage === "project2_en.html"
+                ? "project2_en.html"
+                : "project_en.html"
+              : currentPage === "project2.html" ||
+                  currentPage === "project2_en.html"
+                ? "project2.html"
+                : "project.html";
+          const queryString = [];
+          if (lang) queryString.push(`lang=${lang}`);
+          if (mode) queryString.push(`mode=${mode}`);
+          const queryPart =
+            queryString.length > 0 ? `?${queryString.join("&")}` : "";
+          window.location.href = targetPage + queryPart;
+        }
+      }
+
+      function getUrlParameter(name) {
+        const url = window.location.href;
+        const param = url.match(new RegExp(`[?&]${name}=([^&]*)`));
+        return param && param[1];
+      }
+
+      let currentImageIndex = 0;
+      const projectImages = {
+        project1: ["p1-detail1.png", "p1-detail2.png", "p1-detail3.png"],
+        project2: ["p2-detail1.png", "p2-detail2.png", "p2-detail3.png"],
+      };
+
+      function updateImages(isAnimating) {
+        const images = document.querySelectorAll(".project-picture");
+        const isMobile = window.innerWidth <= 768;
+
+        images.forEach((image, index) => {
+          const position = (index - currentImageIndex + 3) % 3;
+
+          if (position === 0) {
+            image.className = `project-picture center ${
+              isAnimating ? "animating" : ""
+            }`;
+            image.style.left = isMobile ? "0" : "50%";
+            image.style.transform = isMobile
+              ? "none"
+              : "translate(-50%, 0) scale(1)";
+          } else if (position === 1) {
+            image.className = `project-picture side right ${
+              isAnimating ? "animating" : ""
+            }`;
+            image.style.left = isMobile ? "0" : "75%";
+            image.style.transform = isMobile
+              ? "none"
+              : "translate(-50%, 0) scale(0.75)";
+          } else {
+            image.className = `project-picture side ${
+              isAnimating ? "animating" : ""
+            }`;
+            image.style.left = isMobile ? "0" : "25%";
+            image.style.transform = isMobile
+              ? "none"
+              : "translate(-50%, 0) scale(0.75)";
+          }
+
+          image.style.opacity = position === 0 ? "1" : "0.3";
+          image.style.zIndex = position === 0 ? "2" : "1";
+        });
+      }
+
+      function moveImages(direction) {
+        const isMobile = window.innerWidth <= 768;
+
+        if (!isMobile) {
+          const wrapper = document.querySelector(".project-picture-wrapper");
+          wrapper.style.transition = "transform 0.5s ease-in-out";
+        }
+
+        if (direction === "next") {
+          currentImageIndex = (currentImageIndex + 1) % 3;
+        } else if (direction === "prev") {
+          currentImageIndex = (currentImageIndex - 1 + 3) % 3;
+        }
+
+        updateImages(true);
+
+        setTimeout(() => {
+          updateImages(false);
+        }, 500);
+      }
+    </script>
+  </body>
+</html>

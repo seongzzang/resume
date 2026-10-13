@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://seongzzang.github.io/resume/index.html?lang=ko" />
+    <meta property="og:title" content="양성혜 이력서" />
+    <meta property="og:image" content="image/OGimage.png" />
+    <meta property="og:description" content="양성혜 이력서입니다." />
+    <meta property="og:site_name" content="SCC Portfolio" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <title>양성혜 이력서</title>
+    <style>
+        :root {
+            --main-bg-color: #E2ECD9;
+            --main-font-color: #1d1f20;
+            --main-organization-color: #799E68;
+            --sub-organization-color: #D3E7C2;
+            --accent-color: #97C97A;
+            --border-color: #799E68;
+            --main-svg-filter: invert(66%) sepia(20%) saturate(581%) hue-rotate(58deg) brightness(91%) contrast(91%);
+            font-family: "NanumSquareOTF-Regular", Helvetica;
+            font-weight: 400;
+            --card-margin: 6.1rem 6.8rem 0;
+            --card-height: 30.1rem;
+            --card-border-radius: 0.9rem;
+            --text-color-secondary: #4a4a4a;
+        }
+
+        body {
+            margin: 0;
+            background-image: url("image/bg.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            overflow-x: hidden;
+        }
+
+        .project-card {
+            margin: var(--card-margin);
+            height: var(--card-height);
+            border-radius: var(--card-border-radius);
+            background: var(--main-bg-color);
+            box-shadow: 0 0.3rem 1.3rem 0 rgba(0, 0, 0, 0.2);
+            display: grid;
+            grid-template-areas:
+                "top top top"
+                "name name image"
+                "icons tool image"
+                "bottom bottom bottom";
+            grid-template-rows: 3.1rem 15.1rem 8.3rem 3.1rem;
+            grid-template-columns: 15.6rem 15.6rem 1fr;
+            overflow: hidden;
+        }
+
+        .project-card>* {
+            background-color: var(--main-bg-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-card::before,
+        .project-card::after {
+            content: "";
+            background-color: var(--main-bg-color);
+        }
+
+        .project-card::before {
+            grid-area: top;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-card::after {
+            grid-area: bottom;
+            border-top: 1px solid var(--border-color);
+            border-bottom: none;
+        }
+
+        .project-card-name {
+            grid-area: name;
+            padding: 0 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.5rem;
+            border-left: none;
+        }
+
+        .project-card-image {
+            grid-area: image;
+            padding: 0.6rem;
+            border-right: none;
+            border-bottom: none;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .project-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .project-card-icons {
+            grid-area: icons;
+            padding: 0.6rem;
+            border-left: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 1.5rem;
+            border-bottom: none;
+            gap: 0.6rem;
+        }
+
+        .project-row,
+        .project-github-link {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .project-github-link a {
+            color: var(--main-font-color);
+            font-size: 0.6rem;
+            text-decoration: none;
+        }
+
+        .project-github-link a:hover {
+            text-decoration: underline;
+        }
+
+        .project-icon {
+            width: 1.3rem;
+            height: 1.3rem;
+        }
+
+        .project-content-detail {
+            font-size: 0.6rem;
+        }
+
+        .project-card-tool {
+            grid-area: tool;
+            padding: 0.6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.8rem;
+            border-bottom: none;
+        }
+
+        .project-title {
+            color: var(--main-font-color);
+            font-size: 2.1rem;
+            line-height: normal;
+        }
+
+        .project-content {
+            color: var(--text-color-secondary);
+            font-size: 0.7rem;
+            line-height: 1.4rem;
+        }
+
+        .project-content-detail {
+            color: var(--text-color-secondary);
+            font-size: 0.6rem;
+            line-height: normal;
+        }
+
+        .project-tool-detail {
+            color: var(--main-font-color);
+            font-size: 0.6rem;
+            line-height: normal;
+        }
+
+        .project-tool-point {
+            width: 0.5rem;
+            height: 0.5rem;
+        }
+
+        .project-pictures {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin: 3.1rem;
+            overflow: hidden;
+            height: 25rem;
+        }
+
+        .project-picture-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .project-picture {
+            position: absolute;
+            transition: all 0.5s ease-in-out;
+            width: 34rem;
+            height: 19.1rem;
+        }
+
+        .project-picture.side {
+            transform: scale(0.75) translateX(-50%);
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        .project-picture.side.right {
+            transform: scale(0.75) translateX(50%);
+        }
+
+        .project-picture.center {
+            z-index: 2;
+            transform: scale(1) translateX(0);
+            opacity: 1;
+        }
+
+        .project-div-image {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-radius: 0.9rem;
+            object-fit: cover;
+        }
+
+        .project-prev,
+        .project-next {
+            position: absolute;
+            cursor: pointer;
+            z-index: 3;
+        }
+
+        .project-prev {
+            left: 0.6rem;
+        }
+
+        .project-next {
+            right: 0.6rem;
+        }
+
+        .detail-card {
+            border-top: 1px solid var(--border-color);
+            display: grid;
+            grid-template-areas:
+                "a list ts b"
+                "c d d e";
+            grid-template-columns: 6.8rem 1fr 1fr 6.8rem;
+            grid-template-rows: min-content 2.1rem;
+            overflow: hidden;
+        }
+
+        .detail-card>* {
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .detail-card-a {
+            grid-area: a;
+        }
+
+        .detail-card-b {
+            grid-area: b;
+            border-right: none;
+        }
+
+        .detail-card-c {
+            grid-area: c;
+        }
+
+        .detail-card-d {
+            grid-area: d;
+        }
+
+        .detail-card-e {
+            grid-area: e;
+            border-right: none;
+        }
+
+        .detail-card-list {
+            grid-area: list;
+            padding: 2.1rem;
+            border-right: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .detail-card-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .detail-card-title {
+            color: var(--main-font-color);
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+
+        .detail-card-ts {
+            grid-area: ts;
+            padding: 3.1rem;
+            font-size: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .detail-card-title {
+            display: inline-flex;
+            padding: 0.3rem 1.3rem;
+            justify-content: center;
+            align-items: center;
+            gap: 0.8rem;
+            border-radius: 1.8rem;
+            font-size: 0.8rem;
+            background: var(--accent-color);
+            color: var(--main-font-color);
+            width: fit-content;
+            margin: 0.9rem 0;
+        }
+
+        .project-card-detail {
+            color: var(--main-font-color);
+            font-size: 0.8rem;
+            line-height: normal;
+        }
+
+        .project-card-ex {
+            color: var(--text-color-secondary);
+            font-family: var(--font-family-main);
+            font-size: 0.8rem;
+            line-height: normal;
+            margin: 0.3rem 0 0.8rem 1.1rem;
+        }
+
+        @media (max-width: 64rem) {
+
+            .project-card {
+                margin: 3rem;
+                height: auto;
+                grid-template-areas:
+                    "top top"
+                    "name image"
+                    "icons tool"
+                    "bottom bottom";
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+            }
+        }
+
+        @media (max-width: 48rem) {
+            .project-card {
+                margin: 1.3rem;
+                grid-template-areas:
+                    "image"
+                    "name"
+                    "icons"
+                    "tool";
+                grid-template-rows: auto auto auto auto;
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .project-card-image {
+                grid-area: image;
+                width: 100%;
+                height: auto;
+            }
+
+            .project-card-name {
+                grid-area: name;
+                padding: 1rem;
+            }
+
+            .project-content {
+                padding: 0 1rem;
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            .project-card-icons {
+                grid-area: icons;
+            }
+
+            .project-card-tool {
+                grid-area: tool;
+            }
+
+            .project-card-name,
+            .project-card-image,
+            .project-card-icons,
+            .project-card-tool {
+                padding: 0.6rem;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .project-card-tool {
+                border-bottom: none;
+            }
+
+            .project-card-icons,
+            .project-card-tool {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.8rem;
+            }
+
+            .project-row {
+                width: 100%;
+            }
+
+            .project-pictures {
+                margin: 1.5rem;
+            }
+
+            .project-picture-wrapper {
+                width: 100%;
+            }
+
+            .project-div-image {
+                width: 80%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+                border-radius: 0.9rem;
+            }
+
+            .project-picture.side {
+                display: none;
+            }
+
+            .project-picture.center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: auto;
+            }
+
+            .detail-card {
+                grid-template-areas:
+                    "a list b"
+                    "c ts d"
+                    "e e e";
+                grid-template-columns: 1rem 1fr 1rem;
+                grid-template-rows: auto auto 2.1rem;
+            }
+
+            .detail-card-d {
+                grid-area: d;
+                border-right: none;
+            }
+
+            .detail-card-list,
+            .detail-card-ts {
+                padding: 1.5rem;
+            }
+        }
+
+        a:focus,
+        button:focus,
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 2px solid var(--highlight-color);
+            outline-offset: 2px;
+        }
+
+        .project-content,
+        .project-content-detail,
+        .project-card-ex {
+            color: var(--text-color-secondary);
+            font-size: 0.8rem;
+            line-height: normal;
+        }
+
+        .project-content {
+            font-size: 0.7rem;
+            line-height: 1.4rem;
+        }
+
+        .project-content-detail {
+            font-size: 0.6rem;
+        }
+        .project-icon,
+        .project-tool-point,
+        .project-prev,
+        .project-next {
+            filter: var(--main-svg-filter);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <div class="project-card">
+            <div class="project-card-name">
+                <div class="project-title">기사 초판 서비스 / 스크랩마스터 프리미엄 모바일 뷰어</div>
+                <div class="project-content"> 
+                    신문을 발행일보다 하루 먼저 PC와 모바일에서 볼 수 있는 유료 신문 열람 서비스로, 총 9개 앱의 전반적인 개발 및 운영을 담당하였습니다.
+                    Objective-C 기반 앱을 SwiftUI로 전환하고, iOS 업데이트에 따른 UI 대응 및 유지보수를 진행했습니다.
+                    또한, Fastlane과 CI/CD 파이프라인 구축, 이미지 캐싱 개선 작업을 수행했습니다.
+                    이를 통해 이미지 로딩 효율을 21% 개선하고 사용 편의성을 높여, 사용자 수를 11% 증가시키는 성과를 이루었습니다.
+                </div>
+            </div>
+            <div class="project-card-image">
+                <img src="image/p1.png" class="project-image" />
+            </div>
+            <div class="project-card-icons">
+                <div class="project-row">
+                    <img src="image/period.svg" class="project-icon" />
+                    <div class="project-content-detail">25.01 ~ 현재 / 1년 9개월 ~ 진행 중</div>
+                </div>
+                <div class="project-row">
+                    <img src="image/people.svg" class="project-icon" />
+                    <div class="project-content-detail">2명</div>
+                </div>
+                <div class="project-row">
+                    <img src="image/role.svg" class="project-icon" />
+                    <div class="project-content-detail">iOS 개발자 1명 / 디자이너 1명</div>
+                </div>
+            </div>
+            <div class="project-card-tool">
+                <div class="project-row">
+                    <img src="image/point.svg" class="project-tool-point" />
+                    <div class="project-tool-detail">Swift, SwiftUI, MVVM, async/await</div>
+                </div>
+                <div class="project-row">
+                    <img src="image/point.svg" class="project-tool-point" />
+                    <div class="project-tool-detail">Alamofire, NSCache, UserDefaults, Keychain</div>
+                </div>
+                <div class="project-row">
+                    <img src="image/point.svg" class="project-tool-point" />
+                    <div class="project-tool-detail">Fastlane, TestFlight</div>
+                </div>
+                <div class="project-row">
+                    <img src="image/point.svg" class="project-tool-point" />
+                    <div class="project-tool-detail">Git, Figma, Slack</div>
+                </div>
+            </div>
+        </div>
+        <div class="project-pictures">
+            <img class="project-prev" src="image/prev.svg" onclick="moveImages('prev')" />
+            <div class="project-picture-wrapper">
+                <div class="project-picture side" id="image1">
+                    <img src="image/p1.png" class="project-div-image" />
+                </div>
+                <div class="project-picture center" id="image2">
+                    <img src="image/p1-detail1.png" class="project-div-image" />
+                </div>
+                <div class="project-picture side" id="image3">
+                    <img src="image/p1-detail2.png" class="project-div-image" />
+                </div>
+            </div>
+            <img class="project-next" src="image/next.svg" onclick="moveImages('next')" />
+        </div>
+        <div class="detail-card">
+            <div class="detail-card-a"></div>
+            <div class="detail-card-b"></div>
+            <div class="detail-card-c"></div>
+            <div class="detail-card-d"></div>
+            <div class="detail-card-e"></div>
+            <div class="detail-card-list">
+                <div class="detail-card-wrapper">
+                    <div class="detail-card-title">Objective-C에서 SwiftUI로의 변환 </div>
+                    <div class="project-row">
+                        <img src="image/point.svg" class="project-tool-point" />
+                        <div class="project-card-detail">선언형 UI로 코드가 간결해져 가독성과 개발 속도 개선</div>
+                    </div>
+                    <div class="project-row">
+                        <img src="image/point.svg" class="project-tool-point" />
+                        <div class="project-card-detail">iOS 업데이트에 따른 UI 변경과 신규 API를 적용하기 쉽도록 바꿈</div>
+                    </div>
+                    <div class="project-row">
+                        <img src="image/point.svg" class="project-tool-point" />
+                        <div class="project-card-detail">Objective-C 레거시 코드를 Swift로 통일해 코드 이해도를 높임</div>
+                    </div>
+                    <div class="project-row">
+                        <img src="image/point.svg" class="project-tool-point" />
+                        <div class="project-card-detail">MVVM과 상태 기반 UI로 로직과 화면을 분리해 테스트와 확장이 쉬워지도록 함</div>
+                    </div>
+                    <div class="detail-card-title">초판 지면 열람 기능</div>
+                    <div class="project-row">
+                        <img src="image/point.svg" class="project-tool-point" />
+                        <div class="project-card-detail">발행일 전날 오후 7시부터 모바일에서 미리 확인가능하도록 초판 신문 PDF 열람</div>
+                    </div>
+                    <div class="project-row">
+                        <img src="image/point.svg" class="project-tool-point" />
+                        <div class="project-card-detail">지면 기사를 사용자가 핸드폰으로 기사를 보듯이 넘겨 볼 수 있는 기능</div>
+                    </div>
+                    <div class="project-row">
+                        <img src="image/point.svg" class="project-tool-point" />
+                        <div class="project-card-detail">원하는 기능 클릭 시 해당 기사에 맞게 path를 그리고 해당 기사로 이동</div>
+                    </div>
+                    <div class="project-row">
+                        <img src="image/point.svg" class="project-tool-point" />
+                        <div class="project-card-detail">달력 기반 발행일 선택하여 원하는 날짜 기사 확인 가능</div>
+                    </div>
+                    <div class="project-row">
+                        <img src="image/point.svg" class="project-tool-point" />
+                        <div class="project-card-detail">사용자 편의에 맞도록 확대/축소 기능 제공</div>
+                    </div>
+                    <div class="project-row">
+                        <img src="image/point.svg" class="project-tool-point" />
+                        <div class="project-card-detail">해당 날짜에 기사가 없거나 기사 없을 경우 다음 화면 이동 등 사용자 UI를 통한 오류 처리</div>
+                    </div>
+                    <div class="detail-card-title">기사 스크랩 기능</div>
+                    <div class="project-row">
+                        <img src="image/point.svg" class="project-tool-point" />
+                        <div class="project-card-detail">스크랩한 기사를 한곳에서 모아 기사 목록 조회</div>
+                    </div>
+                    <div class="project-row">
+                        <img src="image/point.svg" class="project-tool-point" />
+                        <div class="project-card-detail">스크랩 기사 상세보기 시 원한 단어 형광펜 처리로 강조 기능</div>
+                    </div>
+                    <div class="project-row">
+                        <img src="image/point.svg" class="project-tool-point" />
+                        <div class="project-card-detail">기사 이미지 확대/축소(핀치 줌 지원, 이미지 캐싱으로 로딩 개선)</div>
+                    </div>
+                    <div class="project-row">
+                        <img src="image/point.svg" class="project-tool-point" />
+                        <div class="project-card-detail">검색을 통한 기사 찾기 기능</div>
+                    </div>
+                    <div class="project-row">
+                        <img src="image/point.svg" class="project-tool-point" />
+                        <div class="project-card-detail">웹·PC와 스크랩 정보 연동하여 기기 간 스크랩 내용 동기화 가능</div>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-card-ts">
+                <div class="detail-card-title">이미지 캐싱 처리 문제</div>
+                <div class="project-row">
+                    <img src="image/point.svg" class="project-tool-point" />
+                    <div class="project-card-detail">문제 인식</div>
+                </div>
+                <div class="project-card-ex">기사 지면 이미지를 열 때마다 네트워크 재요청이 발생하고 메모리 사용량이 증가하는 문제가 있었습니다. 같은 이미지를 다시 볼 때도 로딩이 반복되어 열람 흐름이 끊기고, 이미지가 많은 화면에서는 메모리 부담이 커졌습니다.
+
+                </div>
+
+                <div class="project-row">
+                    <img src="image/point.svg" class="project-tool-point" />
+                    <div class="project-card-detail">문제 해결</div>
+                </div>
+                <div class="project-card-ex">NSCache 기반의 이미지 메모리 캐시를 구현하여 이미 불러온 이미지는 재요청 없이 바로 사용하도록 개선했습니다. 캐시 용량과 개수 제한을 설정해 메모리 사용량을 제어했고, 메모리 경고 시 시스템이 캐시를 자동으로 해제하도록 처리했습니다. 그 결과 이미지 메모리 사용량을 21% 줄이고, 이미지 재방문 시 로딩 속도를 개선했습니다. 이 과정을 통해 이미지 캐싱 전략과 메모리 관리의 중요성을 이해하게 되었고, 이후 이미지가 많은 화면에서도 성능 문제를 더 빠르게 파악하고 개선할 수 있는 역량을 갖추게 되었습니다.
+                </div>
+                <div class="detail-card-title">특정 기사 PATH 문제</div>
+                <div class="project-row">
+                    <img src="image/point.svg" class="project-tool-point" />
+                    <div class="project-card-detail">문제 인식</div>
+                </div>
+                <div class="project-card-ex">신문 지면에서 특정 기사를 선택했을 때 해당 기사 영역(Path)의 범위를 정확하게 잡는 데 어려움이 있었습니다. 특히 지면 이미지를 확대·축소하면 화면에 표시되는 이미지 크기와 위치가 계속 달라져, 서버에서 받은 기사 범위가 실제 기사 위치와 어긋나는 문제가 발생했습니다.</div>
+
+                <div class="project-row">
+                    <img src="image/point.svg" class="project-tool-point" />
+                    <div class="project-card-detail">문제 해결</div>
+                </div>
+                <div class="project-card-ex">서버에서 받은 기사 범위 값과 SwiftUI가 이미지를 화면에 배치하면서 자동으로 계산하는 이미지 표시 범위를 코드로 맞춰, 확대·축소 상태에서도 선택한 기사의 Path가 정확하게 잡히도록 구현했습니다. 이와 함께 열람 화면의 다른 UI 편의성도 개선하여 사용자 수를 11% 증가시키는 성과를 얻었습니다. 이 과정을 통해 이미지 좌표계와 화면 좌표계의 차이를 이해하게 되었고, 이후 확대·축소나 레이아웃 변화가 있는 화면에서도 좌표 문제를 더 빠르게 파악하고 해결할 수 있는 역량을 갖추게 되었습니다. </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setLanguage();
+
+            if (document.getElementById("image1")) {
+                updateImages();
+            }
+        });
+
+        function setLanguage() {
+            const lang = getUrlParameter("lang") || "ko";
+            const mode = getUrlParameter("mode");
+            const currentPage = window.location.pathname.split("/").pop();
+            // 현재 페이지 기준 이름 (예: project3_en.html -> project3)
+            const baseName = currentPage.replace(/(_en)?\.html$/, "");
+            // 영문 페이지가 존재하는 프로젝트 목록
+            const pagesWithEn = ["project", "project2"];
+            const targetPage =
+                lang === "en" && pagesWithEn.includes(baseName)
+                    ? `${baseName}_en.html`
+                    : `${baseName}.html`;
+
+            if (currentPage !== targetPage) {
+                const queryString = [];
+                if (lang) queryString.push(`lang=${lang}`);
+                if (mode) queryString.push(`mode=${mode}`);
+                const queryPart = queryString.length > 0 ? `?${queryString.join("&")}` : "";
+                window.location.href = targetPage + queryPart;
+            }
+        }
+
+        function getUrlParameter(name) {
+            const url = window.location.href;
+            const param = url.match(new RegExp(`[?&]${name}=([^&]*)`));
+            return param && param[1];
+        }
+
+        let currentImageIndex = 0;
+        const projectImages = {
+            project1: ["p1.png", "p1-detail1.png", "p1-detail2.png"],
+            project2: ["p2.png", "p2-detail1.png", "p2-detail2.png"],
+        };
+
+        function updateImages(isAnimating) {
+            const images = document.querySelectorAll(".project-picture");
+            const isMobile = window.innerWidth <= 768;
+
+            images.forEach((image, index) => {
+                const position = (index - currentImageIndex + 3) % 3;
+
+                if (position === 0) {
+                    image.className = `project-picture center ${isAnimating ? "animating" : ""
+                        }`;
+                    image.style.left = isMobile ? "0" : "50%";
+                    image.style.transform = isMobile ? "none" : "translate(-50%, 0) scale(1)";
+                } else if (position === 1) {
+                    image.className = `project-picture side right ${isAnimating ? "animating" : ""
+                        }`;
+                    image.style.left = isMobile ? "0" : "75%";
+                    image.style.transform = isMobile
+                        ? "none"
+                        : "translate(-50%, 0) scale(0.75)";
+                } else {
+                    image.className = `project-picture side ${isAnimating ? "animating" : ""
+                        }`;
+                    image.style.left = isMobile ? "0" : "25%";
+                    image.style.transform = isMobile
+                        ? "none"
+                        : "translate(-50%, 0) scale(0.75)";
+                }
+
+                image.style.opacity = position === 0 ? "1" : "0.3";
+                image.style.zIndex = position === 0 ? "2" : "1";
+            });
+        }
+
+        function moveImages(direction) {
+            const isMobile = window.innerWidth <= 768;
+
+            if (!isMobile) {
+                const wrapper = document.querySelector(".project-picture-wrapper");
+                wrapper.style.transition = "transform 0.5s ease-in-out";
+            }
+
+            if (direction === "next") {
+                currentImageIndex = (currentImageIndex + 1) % 3;
+            } else if (direction === "prev") {
+                currentImageIndex = (currentImageIndex - 1 + 3) % 3;
+            }
+
+            updateImages(true);
+
+            setTimeout(() => {
+                updateImages(false);
+            }, 500);
+        }
+
+    </script>
+</body>
+
+</html>

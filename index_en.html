@@ -1,0 +1,1798 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://seongzzang.github.io/resume/index_en.html?lang=en" />
+  <meta property="og:title" content="Seonghye Yang's Resume" />
+  <meta property="og:image" content="image/OGimage.png" />
+  <meta property="og:description" content="This is Seonghye Yang's resume." />
+  <meta property="og:site_name" content="SCC Portfolio" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <title>Seonghye Yang's Resume</title>
+  <style>
+    @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+    :root {
+      --main-organization-color: #799E68;
+      --sub-organization-color: #D3E7C2;
+      --main-svg-filter: invert(66%) sepia(20%) saturate(581%) hue-rotate(58deg) brightness(91%) contrast(91%);
+      --main-bg-color: #E2ECD9;
+      --main-font-color: #222425;
+      --secondary-font-color: #5f666b;
+      --highlight-color: #ffffff;
+      --shadow-color: rgba(0, 0, 0, 0.25);
+      --accent-color: #97C97A;
+      --accent-light-color: #ADDA96;
+    }
+
+    .font-regular {
+      font-family: "NanumSquareOTF-Regular", Helvetica;
+      font-weight: 400;
+    }
+
+    .svg-filter {
+      filter: var(--main-svg-filter);
+    }
+
+    .font-bold {
+      font-family: "NanumSquareOTF-ExtraBold", Helvetica;
+      font-weight: 700;
+    }
+
+    .font-extra-bold {
+      font-family: var(--font-family-bold);
+      font-weight: var(--font-weight-extra-bold);
+    }
+
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      box-sizing: border-box;
+    }
+
+    .size-full {
+      width: 100%;
+      height: 100%;
+    }
+
+    .w-full {
+      width: 100%;
+    }
+
+    .flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    html,
+    body {
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-image: url("image/bg.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    .background {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .frame {
+      max-width: 93.75rem;
+      height: auto;
+      position: relative;
+      display: flex;
+      margin: 0 auto;
+      padding: 4.38rem 1.25rem;
+      align-items: flex-start;
+    }
+
+    .side-bar {
+      width: 19.5rem;
+      flex-shrink: 0;
+      height: auto;
+      background-color: var(--main-bg-color);
+      border-radius: 1.25rem;
+      box-shadow: 0 0.25rem 0.25rem var(--shadow-color);
+      padding-bottom: 1.88rem;
+      position: sticky;
+      top: 4.38rem;
+      align-self: flex-start;
+    }
+
+    .side-bar-logo {
+      height: auto;
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      max-width: 8rem;
+      margin-top: 2.19rem;
+    }
+
+    .side-bar-profile {
+      position: relative;
+      width: 15rem;
+      height: 15rem;
+      margin-top: 1.88rem;
+      margin-left: 2.25rem;
+      background-color: var(--sub-organization-color);
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .side-bar-profile-picture {
+      object-fit: cover;
+      object-position: center 20%;
+      transform: scale(1.1) translateY(5%);
+      transition: transform 0.3s ease;
+    }
+
+    .side-bar-profile:hover .side-bar-profile-picture {
+      transform: scale(1.15) translateY(2%);
+    }
+
+    .name-tag {
+      position: relative;
+      width: 15.0625rem;
+      margin-top: 2.5rem;
+      margin-left: 2.25rem;
+    }
+
+    .name {
+      position: relative;
+      width: 100%;
+      color: var(--main-font-color);
+      font-size: 2.944375rem;
+      text-align: center;
+      letter-spacing: 0;
+      line-height: normal;
+      word-break: break-word;
+    }
+
+    .sub-name {
+      position: relative;
+      width: 100%;
+      margin-top: 0.625rem;
+      color: #81898f;
+      font-size: 1.13125rem;
+      text-align: center;
+      letter-spacing: 0;
+      line-height: normal;
+      word-break: break-word;
+    }
+
+    .info {
+      position: relative;
+      width: 15rem;
+      margin-top: 2.5rem;
+      margin-left: 2.25rem;
+      padding-bottom: 1rem;
+    }
+
+    .info-detail {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 0.625rem;
+    }
+
+    .info-detail-icon {
+      width: 1rem;
+      height: 1rem;
+      margin-right: 0.5625rem;
+      flex-shrink: 0;
+    }
+
+    .info-detail-exp {
+      color: var(--secondary-font-color);
+      font-size: 0.700625rem;
+      letter-spacing: 0;
+      line-height: 1rem;
+      word-break: break-word;
+      flex-grow: 1;
+    }
+
+    .strength-set {
+      position: relative;
+      width: 14.9375rem;
+      height: 5.75rem;
+      margin-top: 1.5rem;
+      margin-left: 2.25rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .strength {
+      width: 4.5rem;
+      height: 5.75rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .strength-img {
+      width: 4.375rem;
+      height: 4.25rem;
+      margin-bottom: 0.5625rem;
+    }
+
+    .strength-text {
+      color: var(--secondary-font-color);
+      font-size: 0.6875rem;
+      line-height: 1.2;
+    }
+
+    .line {
+      position: relative;
+      width: 15.0625rem;
+      height: 0.05rem;
+      margin-top: 1.5rem;
+      margin-left: 2.25rem;
+      background: rgba(121, 158, 104, 0.4);
+    }
+
+    .skill {
+      position: relative;
+      width: 15.0625rem;
+      margin-top: 1.5rem;
+      margin-left: 2.25rem;
+    }
+
+    .skill-title {
+      position: relative;
+      height: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .skill-title-img {
+      width: 0.8125rem;
+      height: 0.8125rem;
+      position: absolute;
+      left: 0;
+      top: 0.125rem;
+    }
+
+    .skill-title-text {
+      position: absolute;
+      width: 13.5rem;
+      top: 0;
+      left: 1.4375rem;
+      color: var(--secondary-font-color);
+      font-size: 0.70625rem;
+      letter-spacing: 0;
+      line-height: normal;
+    }
+
+    .skill-item {
+      margin-bottom: 0.75rem;
+      position: relative;
+      clear: both;
+    }
+
+    .skill-set {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .point {
+      width: 0.4375rem;
+      height: 0.4375rem;
+      background-color: var(--main-font-color);
+      border-radius: 0.23125rem;
+      margin-right: 0.5rem;
+    }
+
+    .skill-text {
+      color: var(--main-font-color);
+      font-size: 0.78125rem;
+      letter-spacing: 0;
+      line-height: normal;
+    }
+
+    .skill-bar {
+      width: 14.5625rem;
+      height: 0.875rem;
+      background-color: var(--highlight-color);
+      border-radius: 0.588125rem;
+      box-shadow: 0 0.078125rem 0.24375rem var(--shadow-color);
+      margin-top: 0.625rem;
+      position: relative;
+    }
+
+    .skill-bar-progress {
+      position: absolute;
+      height: 0.875rem;
+      left: 0.4375rem;
+    }
+
+    .skill-bar-rectangle {
+      position: absolute;
+      height: 0.375rem;
+      top: 0.25rem;
+      left: 0;
+      background-color: var(--main-organization-color);
+      border-radius: 0.509375rem;
+    }
+
+    .skill-bar-o1 {
+      position: absolute;
+      width: 0.875rem;
+      height: 0.875rem;
+      top: 0;
+      background-color: var(--highlight-color);
+      border-radius: 0.43125rem;
+      box-shadow: 0 0 0.156875rem #00000026;
+    }
+
+    .skill-bar-o2 {
+      position: absolute;
+      width: 0.5rem;
+      height: 0.5rem;
+      top: 0.1875rem;
+      background-color: var(--main-organization-color);
+      border-radius: 0.234375rem;
+    }
+
+    .license {
+      position: relative;
+      width: 15.0625rem;
+      margin-top: 2.5rem;
+      margin-left: 2.25rem;
+    }
+
+    .license-img {
+      width: 1rem;
+      height: 0.71875rem;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .license-title {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 0.4375rem;
+      color: var(--secondary-font-color);
+      font-size: 0.70625rem;
+      letter-spacing: 0;
+      line-height: normal;
+    }
+
+    .license-wrap {
+      position: relative;
+      width: 15.0625rem;
+      margin-top: 1.25rem;
+    }
+
+    .license-content {
+      position: relative;
+      height: 2.4375rem;
+      background-color: var(--sub-organization-color);
+      border-radius: 0.3125rem;
+      border: 0.125rem solid;
+      border-color: var(--main-organization-color);
+      margin-bottom: 0.3125rem;
+    }
+
+    .license-text {
+      position: relative;
+      padding: 0.625rem;
+      color: var(--main-font-color);
+      font-size: 0.78125rem;
+      letter-spacing: 0;
+      line-height: normal;
+    }
+
+    .education {
+      position: relative;
+      width: 15.0625rem;
+      margin-top: 2.5rem;
+      margin-left: 2.25rem;
+    }
+
+    .education-title {
+      position: relative;
+      height: 0.9375rem;
+      margin: 4rem 0 1rem 0;
+    }
+
+    .education-text {
+      position: relative;
+      width: 13.5rem;
+      margin-left: 1.5625rem;
+      color: var(--secondary-font-color);
+      font-size: 0.700625rem;
+      letter-spacing: 0;
+      line-height: normal;
+    }
+
+    .education-img {
+      position: absolute;
+      width: 0.9375rem;
+      height: 0.71875rem;
+      top: 0.125rem;
+      left: 0;
+    }
+
+    .education-name {
+      color: var(--main-font-color);
+      font-size: 1.0275rem;
+      line-height: normal;
+      margin-bottom: 0.625rem;
+      text-align: left;
+    }
+
+    .education-detail {
+      color: var(--secondary-font-color);
+      font-size: 0.700625rem;
+      line-height: normal;
+      margin-bottom: 1.25rem;
+      text-align: left;
+    }
+
+    /* 메인 CSS */
+    .exp-div {
+      position: relative;
+      width: 62.4rem;
+      margin: 3.1rem 0;
+    }
+
+    .proj-div {
+      position: relative;
+      width: 62.4rem;
+      margin: 3.1rem 0;
+    }
+
+    .intro-logo {
+      height: auto;
+      max-width: 45rem;
+      display: block;
+      margin: 0 auto;
+      object-fit: contain;
+      aspect-ratio: attr(width) / attr(height);
+    }
+
+    .main-content {
+      width: calc(100% - 20.25rem);
+      margin-left: 2.5rem;
+    }
+
+    .intro-div {
+      width: 62.4375rem;
+      height: 29.4375rem;
+      border-radius: 0.939375rem;
+      overflow: hidden;
+      box-shadow: 0 0.250625rem 1.253125rem #00000033;
+      background: var(--highlight-color);
+      position: relative;
+    }
+
+    .intro-frame {
+      position: relative;
+      height: 29.4375rem;
+      background: linear-gradient(180deg,
+          rgba(34, 36, 37, 0) 0%,
+          var(--sub-organization-color) 100%);
+    }
+
+    .intro-logo {
+      position: absolute;
+      opacity: 20%;
+      width: 40.0703125rem;
+      height: 13.125rem;
+      top: 16.31875rem;
+      left: 7.875rem;
+    }
+
+    .intro-picture-frame {
+      position: absolute;
+      width: 22.25rem;
+      height: 22.25rem;
+      top: 3.578125rem;
+      left: 36.1875rem;
+      background-color: var(--highlight-color);
+    }
+
+    .intro-picture {
+      position: absolute;
+      width: 22.25rem;
+      height: 22.25rem;
+      top: 0;
+      left: 0;
+      object-position: center 20%;
+      object-fit: cover;
+    }
+
+    .intro-star {
+      position: absolute;
+      width: 6.5rem;
+      height: 6.5rem;
+      top: 4.5rem;
+      left: 32.90625rem;
+    }
+
+    .intro-content {
+      position: relative;
+      width: 29.1rem;
+      height: 22.25rem;
+      top: 3.578125rem;
+      left: 3.3rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .intro-quote {
+      width: 3.1rem;
+      height: 2.6rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .intro-text {
+      width: 28.8rem;
+      color: var(--main-font-color);
+      font-size: 2.0rem;
+      letter-spacing: 0;
+      line-height: normal;
+      margin-bottom: 1.5rem;
+    }
+
+    .intro-text-detail {
+      width: 28.8rem;
+      color: var(--secondary-font-color);
+      font-size: 0.9rem;
+      letter-spacing: 0;
+      line-height: normal;
+    }
+
+    .intro-row-line {
+      position: absolute;
+      width: 62.4rem;
+      height: 0.05rem;
+      top: 3.5rem;
+      left: 0;
+      background: var(--main-organization-color);
+    }
+
+    .intro-column-line {
+      position: absolute;
+      width: 0.05rem;
+      height: 29.4rem;
+      top: 0;
+      left: 36.2rem;
+      background: var(--main-organization-color);
+    }
+
+    /* 메인 CSS 끝 */
+
+    /* 경력 DIV */
+    .exp-div {
+      position: relative;
+      width: 62.4rem;
+      margin: 3.1rem 0;
+    }
+
+    .exp-title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.3rem;
+    }
+
+    .exp-img {
+      width: 1.7rem;
+      height: 1.4rem;
+      margin-right: 0.5rem;
+    }
+
+    .exp-text {
+      color: var(--main-font-color);
+      font-size: 1.4rem;
+      letter-spacing: 0;
+      line-height: normal;
+      text-align: center;
+    }
+
+    .exp-cards-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .exp-card-frame {
+      position: relative;
+      padding: 0 4rem;
+      transition: transform 0.5s ease-in-out;
+      display: flex;
+      align-items: stretch;
+      gap: 1rem;
+    }
+
+    .exp-card {
+      position: relative;
+      width: 19.7rem;
+      border-radius: 1rem;
+      background: var(--sub-organization-color);
+      padding: 0.8rem;
+      min-width: 33.33%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .exp-card-period-wrapper {
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-card-company {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .exp-card-term {
+      font-size: 0.6rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-card-team {
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-card-task {
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-card-task-text {
+      font-size: 0.6rem;
+    }
+
+    .exp-card-proj {
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-card-proj-name {
+      font-size: 0.6rem;
+    }
+
+    .exp-card-task-term {
+      font-size: 0.6rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-card-task-detail-text {
+      font-size: 0.6rem;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+      width: 70%;
+    }
+
+    .exp-card-period-wrapper {
+      width: fit-content;
+      min-width: 3.4rem;
+      min-height: 1.2rem;
+      border-radius: 0.4rem;
+      background: var(--accent-color);
+      margin: 0 auto 0.8rem;
+      padding: 0.1rem 0.5rem;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .exp-card-period {
+      color: var(--main-font-color);
+      font-size: 0.6rem;
+      line-height: 1.2;
+      white-space: nowrap;
+      letter-spacing: 0;
+    }
+
+    .exp-card-company {
+      text-align: center;
+      color: var(--main-font-color);
+      font-size: 1.2rem;
+      line-height: 1.4;
+      letter-spacing: 0;
+      word-break: break-word;
+      margin-bottom: 0.5rem;
+    }
+
+    .exp-card-term {
+      text-align: center;
+      color: var(--secondary-font-color);
+      font-size: 0.7rem;
+      line-height: 1.2;
+      letter-spacing: 0;
+      margin: 0 auto 1rem;
+    }
+
+    .exp-card-team {
+      width: fit-content;
+      min-width: 3.4rem;
+      min-height: 1.2rem;
+      height: 0.9rem;
+      border-radius: 0.4rem;
+      background: var(--accent-color);
+      margin: 0 auto 0.8rem;
+      padding: 0.1rem 0.5rem;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .exp-card-team-name {
+      color: var(--main-font-color);
+      font-size: 0.7rem;
+      line-height: 1.2;
+      text-align: center;
+      letter-spacing: 0;
+      white-space: normal;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .exp-card-task {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .point {
+      margin-right: 0.5rem;
+      margin-top: 0.2rem;
+    }
+
+    .exp-card-task-text {
+      width: auto;
+      max-width: 14.3rem;
+      color: var(--main-font-color);
+      font-size: 0.7rem;
+      line-height: 1.4;
+      letter-spacing: 0;
+      word-break: break-word;
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    .exp-card-task-term {
+      width: 100%;
+      color: var(--main-font-color);
+      font-size: 0.7rem;
+      line-height: 1.2;
+      white-space: nowrap;
+      letter-spacing: 0;
+      margin-bottom: 0.8rem;
+      text-align: center;
+    }
+
+    .exp-card-proj {
+      width: fit-content;
+      min-width: 3.4rem;
+      min-height: 1.2rem;
+      height: 0.9rem;
+      border-radius: 0.4rem;
+      background: var(--accent-color);
+      margin: 0 auto 0.8rem;
+      padding: 0.1rem 0.5rem;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .exp-card-proj-name {
+      color: var(--main-font-color);
+      font-size: 0.7rem;
+      line-height: 1.2;
+      white-space: nowrap;
+      letter-spacing: 0;
+    }
+
+    .exp-card-task-detail {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .exp-card-task-detail-text {
+      color: var(--main-font-color);
+      font-size: 0.7rem;
+      line-height: 1.4;
+      letter-spacing: 0;
+      word-break: break-word;
+      margin-bottom: 1rem;
+    }
+
+    /* 경력 파트 CSS 끝 */
+    /* 프로젝트 div*/
+    .proj-div {
+      position: relative;
+      width: 62.4rem;
+      margin: 3.1rem 0;
+    }
+
+    .proj-title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.9rem;
+      margin: 2rem 0;
+    }
+
+    .proj-title-img {
+      width: 1.6rem;
+      height: 1.6rem;
+      margin-right: 0.6rem;
+    }
+
+    .proj-title-text {
+      color: var(--main-font-color);
+      font-size: 1.4rem;
+      letter-spacing: 0;
+      line-height: normal;
+    }
+
+    .proj-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.7rem;
+      justify-content: space-between;
+    }
+
+    .proj {
+      width: calc(50% - 0.85rem);
+      height: auto;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      margin-bottom: 1.6rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .proj:hover {
+      transform: scale(1.05);
+    }
+
+    .proj-main-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background-color: var(--main-organization-color);
+      border-radius: 0.9rem 0.9rem 0 0;
+    }
+
+    .proj-content {
+      width: 100%;
+      height: auto;
+      border-radius: 0 0 0.9rem 0.9rem;
+      border: 0.1rem solid var(--main-organization-color);
+      padding: 1.3rem 1.6rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .proj-content-title {
+      color: var(--main-font-color);
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+      word-break: break-word;
+    }
+
+    .proj-content-text {
+      color: var(--secondary-font-color);
+      font-size: 0.8rem;
+      line-height: 1.4;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 8;
+      -webkit-box-orient: vertical;
+      flex-grow: 1;
+    }
+
+    .language-switch-floating {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .language-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      background-color: var(--accent-color);
+      color: var(--main-font-color);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 1rem;
+    }
+
+    .language-button:hover {
+      background-color: var(--accent-light-color);
+    }
+
+    @media (max-width: 64rem) {
+      .frame {
+        flex-direction: column;
+        padding: 1.2rem;
+      }
+
+      .side-bar,
+      .main-content {
+        width: 100%;
+        max-width: 37.5rem;
+        margin: 0 auto 1.2rem;
+      }
+
+      .side-bar {
+        position: relative;
+        top: 0;
+      }
+
+      .main-content {
+        margin-left: 0;
+      }
+
+      .exp-cards-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .exp-card {
+        margin-bottom: 1.2rem;
+      }
+
+      .proj-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.6rem;
+      }
+
+      .proj {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      .background {
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
+
+      .frame {
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .side-bar,
+      .intro-div,
+      .exp-div,
+      .proj-div {
+        position: static;
+        width: 100%;
+        max-width: 400px;
+        margin: 20px auto;
+      }
+
+      .side-bar {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .side-bar-logo,
+      .side-bar-profile,
+      .name-tag,
+      .info,
+      .strength-set,
+      .line,
+      .skill,
+      .license,
+      .education {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .education-text,
+      .skill-title-text,
+      .license-title {
+        position: absolute;
+      }
+
+      .skill-title-text,
+      .education-text,
+      .license-title {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        font-family: var(--font-family-bold);
+        text-align: left;
+      }
+
+      .license-title {
+        margin-left: 0;
+      }
+
+      .skill-title-img,
+      .education-img,
+      .license-img {
+        position: absolute;
+        left: 0;
+        margin-right: 10px;
+        /* display: none; 이 을 제거하거나 주석 처리 */
+      }
+
+      .skill-title,
+      .education-title,
+      .license {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 20px;
+        /* 아이콘과 텍스트의 높이에 맞게 조정 */
+      }
+
+      .intro-div {
+        width: 100%;
+        height: auto;
+        border-radius: 0.939375rem;
+        overflow: hidden;
+        box-shadow: 0 0.250625rem 1.253125rem #00000033;
+        background: var(--highlight-color);
+        position: relative;
+        margin: 20px auto;
+        /* 추가: 모바일 화면에서 중앙 정렬 */
+        padding: 20px;
+        /* 추가: 내부 여백 추가 */
+      }
+
+      .intro-frame {
+        text-align: center;
+        height: auto;
+        /* 수정: 높이를 자동으로 조정 */
+        background: none;
+        /* 수정: 배경 제거 */
+      }
+
+      .intro-logo,
+      .intro-picture-frame,
+      .intro-row-line,
+      .intro-column-line,
+      .intro-star {
+        display: none;
+      }
+
+      .intro-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        color: #81898f;
+        top: 0;
+        left: 0;
+        padding: 20px;
+        height: auto;
+      }
+
+      .intro-quote {
+        width: 3.1rem;
+        height: 2.6rem;
+        margin: 1.25rem;
+      }
+
+      .intro-text {
+        font-size: 14px;
+        width: 100%;
+        word-wrap: break-word;
+        text-align: center;
+        /* 추가: 텍스트 중앙 정렬 */
+      }
+
+      .intro-text-detail {
+        font-size: 10px;
+        width: 100%;
+        word-wrap: break-word;
+        top: 7rem;
+        text-align: center;
+        /* 추가: 텍스트 중앙 정렬 */
+      }
+
+      /* 경력 Div */
+      .exp-div {
+        margin: 20px auto;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        /* 수정: 세로 배치 */
+        align-items: flex-start;
+      }
+
+      .exp-cards-container {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        /* 수정: 세로 배치 */
+        align-items: center;
+      }
+
+      .exp-card-frame {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        transition: transform 0.5s ease-in-out;
+        flex-direction: column;
+        /* 수정: 세로 배치 */
+      }
+
+      .exp-card {
+        width: 100%;
+        height: auto;
+        min-height: 300px;
+        transform: scale(1);
+        opacity: 1;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        transition: all 0.5s ease-in-out;
+        flex: 0 0 100%;
+      }
+
+      .exp-card-period-wrapper {
+        width: fit-content;
+        min-width: 3.4rem;
+        height: 0.9rem;
+        border-radius: 0.4rem;
+        background: var(--accent-color);
+        margin: 0 auto 0.4rem;
+        padding: 0.1rem 0.5rem;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .exp-card-period {
+        color: var(--main-font-color);
+        font-size: 0.5rem;
+        line-height: normal;
+        white-space: nowrap;
+        letter-spacing: 0;
+      }
+
+      .exp-card-company,
+      .exp-card-term,
+      .exp-card-task-text,
+      .exp-card-task-term,
+      .exp-card-task-detail-text {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .exp-card-task,
+      .exp-card-task-detail {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .point {
+        margin-right: 0.5rem;
+        margin-top: 0.2rem;
+        flex-shrink: 0;
+      }
+
+      #card1,
+      #card3 {
+        display: none;
+      }
+
+      .exp-prev,
+      .exp-next {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        z-index: 10;
+      }
+
+      .exp-prev {
+        left: -15px;
+      }
+
+      .exp-next {
+        right: -15px;
+      }
+
+      .proj-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.6rem;
+      }
+
+      .proj {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .proj-main-img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 15px 15px 0 0;
+      }
+
+      .proj-content {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        background-color: var(--sub-organization-color);
+        border-radius: 0 0 15px 15px;
+      }
+
+      .proj-content-title {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .proj-content-text {
+        font-size: 12px;
+        line-height: 1.4;
+      }
+
+      .info-detail {
+        justify-content: flex-start;
+      }
+
+      .info-detail-exp {
+        text-align: left;
+      }
+
+      .project-picture.center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+      }
+
+      .project-div-image {
+        width: 80%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="w-full">
+  <div class="background w-full">
+    <div class="frame w-full">
+      <!-- side-bar -->
+      <div class="side-bar">
+        <img class="side-bar-logo w-full" src="image/basiclogo.svg" />
+        <div class="side-bar-profile">
+          <img class="side-bar-profile-picture size-full" src="image/profile_image.png" />
+        </div>
+        <div class="name-tag">
+          <div class="name font-bold">Seonghye Yang</div>
+          <div class="sub-name font-regular">iOS Developer</div>
+        </div>
+        <div class="info">
+          <div class="info-detail">
+            <object class="info-detail-icon svg-filter" data="image/detail-1.svg" color="red"></object>
+            <div class="info-detail-exp font-regular">
+              Specializing in iOS app development, <br />building user-friendly
+              applications with Swift.
+            </div>
+          </div>
+          <div class="info-detail">
+            <img class="info-detail-icon svg-filter" src="image/detail-2.svg" />
+            <div class="info-detail-exp font-regular">
+              2000.05.24 / Dalseo-gu, Daegu
+            </div>
+          </div>
+          <div class="info-detail">
+            <img class="info-detail-icon svg-filter" src="image/detail-3.svg" />
+            <div class="info-detail-exp font-regular">ekfo9418@naver.com</div>
+          </div>
+          <div class="info-detail">
+            <img class="info-detail-icon svg-filter" src="image/detail-4.svg" />
+            <div class="info-detail-exp font-regular">010-2471-9418</div>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="strength-set">
+          <div class="strength">
+            <img class="strength-img svg-filter" src="image/strength-1.png" />
+            <div class="strength-text font-regular">Communication</div>
+          </div>
+          <div class="strength">
+            <img class="strength-img svg-filter" src="image/strength-2.png" />
+            <div class="strength-text font-regular">Fast Execution</div>
+          </div>
+          <div class="strength">
+            <img class="strength-img svg-filter" src="image/strength-3.png" />
+            <div class="strength-text font-regular">Self-Development</div>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="skill">
+          <div class="skill-title w-full">
+            <img class="skill-title-img svg-filter" src="image/skill-title.svg" />
+            <div class="skill-title-text font-regular">SKILL SET</div>
+          </div>
+
+          <div class="skill-item w-full">
+            <div class="skill-set w-full">
+              <div class="point svg-filter"></div>
+              <div class="skill-text font-bold">Swift</div>
+            </div>
+            <div class="skill-bar" data-progress="85">
+              <div class="skill-bar-progress">
+                <div class="skill-bar-rectangle"></div>
+                <div class="skill-bar-o1"></div>
+                <div class="skill-bar-o2"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-set">
+              <div class="point svg-filter"></div>
+              <div class="skill-text font-bold">UIKit</div>
+            </div>
+            <div class="skill-bar" data-progress="80">
+              <div class="skill-bar-progress">
+                <div class="skill-bar-rectangle"></div>
+                <div class="skill-bar-o1"></div>
+                <div class="skill-bar-o2"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-set">
+              <div class="point svg-filter"></div>
+              <div class="skill-text font-bold">SwiftUI</div>
+            </div>
+            <div class="skill-bar" data-progress="90">
+              <div class="skill-bar-progress">
+                <div class="skill-bar-rectangle"></div>
+                <div class="skill-bar-o1"></div>
+                <div class="skill-bar-o2"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-set">
+              <div class="point svg-filter"></div>
+              <div class="skill-text font-bold">Objective-C</div>
+            </div>
+            <div class="skill-bar" data-progress="60">
+              <div class="skill-bar-progress">
+                <div class="skill-bar-rectangle"></div>
+                <div class="skill-bar-o1"></div>
+                <div class="skill-bar-o2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="license">
+          <img class="license-img svg-filter" src="image/license.svg" />
+          <div class="license-title font-regular">LICENSE</div>
+          <div class="license-wrap">
+            <div class="license-content">
+              <div class="license-text font-bold">Engineer Information Processing</div>
+            </div>
+            <div class="license-content">
+              <div class="license-text font-bold">SQLD (SQL Developer)</div>
+            </div>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="education">
+          <div class="education-title w-full">
+            <img class="education-img svg-filter" src="image/education.svg" />
+            <div class="education-text font-regular">EDUCATION</div>
+          </div>
+          <div class="education-content w-full">
+            <div class="education-name font-bold">Seoul Women's University</div>
+            <p class="education-detail font-regular">
+              2019.03.01 ~ 2022.08.19 / GPA 4.14 / Nowon-gu, Seoul
+            </p>
+            <div class="education-name font-bold">Gimhae Yulha High School</div>
+            <p class="education-detail font-regular">
+              2016.03.02 ~ 2019.02.14 / Yulha, Gimhae
+            </p>
+          </div>
+        </div>
+        <div class="line"></div>
+      </div>
+      <!-- main content -->
+      <div class="main-content">
+        <!-- 자기소개 div -->
+        <div class="intro-div">
+          <div class="intro-frame">
+            <img class="intro-logo w-full" src="image/basiclogo.svg" />
+            <div class="intro-picture-frame">
+              <img class="intro-picture" src="image/profile_image.png" />
+            </div>
+            <div class="intro-row-line"></div>
+
+            <div class="intro-row-line" style="top: 412px"></div>
+            <div class="intro-column-line"></div>
+            <div class="intro-column-line" style="left: 934px"></div>
+            <img class="intro-star svg-filter" src="image/star.svg" />
+            <div class="intro-content">
+              <img class="intro-quote svg-filter" src="image/quote.svg" />
+              <p class="intro-text font-bold">
+                I'm Seonghye Yang,<br />a developer who adapts flexibly.
+              </p>
+              <p class="intro-text-detail font-regular">
+                Working with different tech stacks and codebases across various projects, I have built the flexibility to adjust my approach to each situation.
+                My strength is adapting quickly to new environments and solving problems without being intimidated.
+                In live service operations, I respond calmly to unexpected issues and rapidly changing requirements, and I once increased users' app usage time by 32%
+                by identifying and fixing problems based on user data.
+                Building on my experience of collaborating with diverse teammates and adapting to change, I want to respond nimbly to a new team's changes and challenges and grow together.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- 경력 div -->
+        <div class="exp-div">
+          <div class="exp-title">
+            <img class="exp-img svg-filter" src="image/exp.svg" />
+            <div class="exp-text font-bold">EXPERIENCE</div>
+          </div>
+          <div class="exp-cards-container">
+            <div class="exp-card-frame flex-center size-full">
+              <div class="exp-card">
+                <div class="exp-card-period-wrapper flex-center">
+                  <div class="exp-card-period font-regular">2 yrs 4 mos ~</div>
+                </div>
+                <div class="exp-card-company font-bold">
+                  Dahami Communications
+                </div>
+                <div class="exp-card-term">2024.05 ~</div>
+                <div class="exp-card-team">
+                  <div class="exp-card-team-name font-bold">
+                    Solution Development Team 2, iOS Developer
+                  </div>
+                </div>
+                <div class="exp-card-task">
+                  <div class="point svg-filter"></div>
+                  <div class="exp-card-task-text font-regular">
+                    iOS app development and maintenance
+                  </div>
+                </div>
+                <div class="exp-card-proj">
+                  <div class="exp-card-proj-name font-bold">
+                    Print & Online News Scrap Service Apps
+                  </div>
+                </div>
+                <div class="exp-card-task">
+                  <div class="point svg-filter"></div>
+                  <div class="exp-card-task-text font-regular">
+                    Migrated Objective-C code to SwiftUI
+                  </div>
+                </div>
+                <div class="exp-card-task">
+                  <div class="point svg-filter"></div>
+                  <div class="exp-card-task-text font-regular">
+                    Applied MVVM architecture and layer separation
+                  </div>
+                </div>
+                <div class="exp-card-task">
+                  <div class="point svg-filter"></div>
+                  <div class="exp-card-task-text font-regular">
+                    Modularization based on Clean Architecture
+                  </div>
+                </div>
+                <div class="exp-card-task">
+                  <div class="point svg-filter"></div>
+                  <div class="exp-card-task-text font-regular">
+                    Improved scroll performance with image caching
+                  </div>
+                </div>
+                <div class="exp-card-task">
+                  <div class="point svg-filter"></div>
+                  <div class="exp-card-task-text font-regular">
+                    Automated builds and deployment with Fastlane
+                  </div>
+                </div>
+                <div class="exp-card-task">
+                  <div class="point svg-filter"></div>
+                  <div class="exp-card-task-text font-regular">
+                    Fixed memory leaks and improved resource management
+                  </div>
+                </div>
+              </div>
+              <div class="exp-card">
+                <div class="exp-card-period-wrapper flex-center">
+                  <div class="exp-card-period font-regular">4 months</div>
+                </div>
+                <div class="exp-card-company font-bold">Team Sparta<br />- AI Service Engineer, Cohort 9</div>
+                <div class="exp-card-term">2026.04~2026.08 (Government-funded KDT)</div>
+                <div class="exp-card-proj">
+                  <div class="exp-card-proj-name font-bold">
+                    Building AI Service Development Skills
+                  </div>
+                </div>
+                <div class="exp-card-task">
+                  <div class="point svg-filter"></div>
+                  <div class="exp-card-task-text font-regular">
+                    Built data visualization dashboards<br />with Python & Streamlit
+                  </div>
+                </div>
+                <div class="exp-card-task">
+                  <div class="point svg-filter"></div>
+                  <div class="exp-card-task-text font-regular">
+                    Report automation project<br />using OCR & PDF parsing
+                  </div>
+                </div>
+                <div class="exp-card-task">
+                  <div class="point svg-filter"></div>
+                  <div class="exp-card-task-text font-regular">
+                    Developed a LangChain & RAG-based PDF summary chatbot<br />and AI Agent
+                  </div>
+                </div>
+                <div class="exp-card-task">
+                  <div class="point svg-filter"></div>
+                  <div class="exp-card-task-text font-regular">
+                    Planned and built personalized music recommendations<br />and monthly reports with LangGraph
+                  </div>
+                </div>
+              </div>
+              <div class="exp-card">
+                <div class="exp-card-period-wrapper flex-center">
+                  <div class="exp-card-period font-regular">5 months</div>
+                </div>
+                <div class="exp-card-company font-bold">LIKELION TECHIT App School<br />: iOS Cohort 2</div>
+                <div class="exp-card-term">2023.05 ~ 2023.10 (Government-funded KDT)</div>
+                <div class="exp-card-proj">
+                  <div class="exp-card-proj-name font-bold">
+                    Building End-to-End iOS Development Skills
+                  </div>
+                </div>
+                <div class="exp-card-task">
+                  <div class="point svg-filter"></div>
+                  <div class="exp-card-task-text font-regular">
+                    iOS app development with Swift, SwiftUI & UIKit<br />(MVVM architecture)
+                  </div>
+                </div>
+                <div class="exp-card-task">
+                  <div class="point svg-filter"></div>
+                  <div class="exp-card-task-text font-regular">
+                    Built an e-commerce MVP app with Firebase<br />and REST API integration
+                  </div>
+                </div>
+                <div class="exp-card-task">
+                  <div class="point svg-filter"></div>
+                  <div class="exp-card-task-text font-regular">
+                    Wrote unit & UI tests with XCTest (TDD)
+                  </div>
+                </div>
+                <div class="exp-card-task">
+                  <div class="point svg-filter"></div>
+                  <div class="exp-card-task-text font-regular">
+                    BinGongGan - Developed a Map-based<br />iOS application
+                  </div>
+                </div>
+                <div class="exp-card-task">
+                  <div class="point svg-filter"></div>
+                  <div class="exp-card-task-text font-regular">
+                    PICO - Developed and released a chat-based<br />blind dating iOS application
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 프로젝트 div -->
+        <div class="proj-div">
+          <div class="proj-title">
+            <img class="proj-title-img svg-filter" src="image/proj.svg" />
+            <div class="proj-title-text font-bold">PROJECT</div>
+          </div>
+          <div class="proj-container">
+            <div class="proj" onclick="location.href = 'project_en.html?lang=en'">
+              <img src="image/p1.png" alt="Project Image" class="proj-main-img" />
+              <div class="proj-content">
+                <div class="proj-content-title font-bold">Early Edition Service / ScrapMaster Premium Mobile Viewer</div>
+                <p class="proj-content-text font-regular">
+                  A paid newspaper service that lets subscribers read the next day's paper on PC and mobile one day before its publication date. I was responsible for the overall development and operation of nine apps.
+                  I migrated Objective-C apps to SwiftUI and handled UI updates and maintenance for new iOS releases.
+                  I also set up Fastlane and a CI/CD pipeline and improved image caching.
+                  As a result, image loading efficiency improved by 21%, and better usability led to an 11% increase in users.
+                </p>
+              </div>
+            </div>
+            <div class="proj" onclick="location.href = 'project2_en.html?lang=en'">
+              <img src="image/p2.png" alt="Project Image" class="proj-main-img" />
+              <div class="proj-content">
+                <div class="proj-content-title font-bold">ScrapMaster+</div>
+                <p class="proj-content-text font-regular">
+                  I maintained and improved the stability of the iOS app for 'ScrapMaster Plus', a news scrap service.
+                  I automated the release process by building Fastlane and a CI/CD pipeline, and carried out overall code refactoring and a migration to MVVM architecture.
+                  By improving the image caching logic and contributing to the article zoom feature and UI usability improvements, I enhanced the user experience and increased users' app usage time by 32%.
+                  As a result, deployment time was reduced by 45%, and image memory usage dropped by 22% after refactoring.
+                </p>
+              </div>
+            </div>
+            <div class="proj" onclick="location.href = 'project3_en.html?lang=en'">
+              <img src="image/p3.png" alt="Project Image" class="proj-main-img" />
+              <div class="proj-content">
+                <div class="proj-content-title font-bold">PICO: Pick & Connect</div>
+                <p class="proj-content-text font-regular">
+                  A dating service that connects people through MBTI-based matching,
+                  aiming to provide trustworthy profiles through AI-based portrait verification and phone authentication.
+                  Using the MVVM pattern, I implemented chat between users who expressed mutual interest.
+                  To protect personal information, I developed a feature that filters specific words in messages, providing a safe chat environment.
+                </p>
+              </div>
+            </div>
+            <div class="proj" onclick="location.href = 'project4_en.html?lang=en'">
+              <img src="image/p4.png" alt="Project Image" class="proj-main-img" />
+              <div class="proj-content">
+                <div class="proj-content-title font-bold">Binder</div>
+                <p class="proj-content-text font-regular">
+                  'BINDER' is an all-in-one service for tutors to manage their students,
+                  aiming to let everyone involved in tutoring use the features they need in one place.
+                  Built with UIKit and the MVC pattern, I implemented a custom calendar for schedule coordination.
+                  I also built a flexible data management structure using MongoDB.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 메인 컨텐츠 끝 -->
+    </div>
+  </div>
+  <div class="language-switch-floating">
+    <button onclick="location.href = 'index.html?lang=ko'" class="language-button font-regular">
+      KO
+    </button>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      setupSkillBars();
+      setLanguageAndMode();
+    });
+
+    function setupSkillBars() {
+      const skillBars = document.querySelectorAll(".skill-bar");
+      skillBars.forEach((bar) => {
+        const progress = bar.getAttribute("data-progress");
+        bar.style.setProperty("--progress", progress);
+
+        const progressBar = bar.querySelector(".skill-bar-progress");
+        progressBar.style.width = `calc((100% - 14px) * ${progress} / 100)`;
+
+        const rectangle = bar.querySelector(".skill-bar-rectangle");
+        rectangle.style.width = `calc(100% - 5px)`;
+
+        const o1 = bar.querySelector(".skill-bar-o1");
+        const o2 = bar.querySelector(".skill-bar-o2");
+        o1.style.left = `calc(100% - 14px)`;
+        o2.style.left = `calc(100% - 11px)`;
+      });
+    }
+    function setLanguageAndMode() {
+      const lang = getUrlParameter("lang") || "ko";
+      const mode = getUrlParameter("mode");
+      const currentPage = window.location.pathname.split("/").pop();
+      const isCorrectPage =
+        (lang === "en" && currentPage === "index_en.html") ||
+        (lang === "ko" && currentPage === "index.html");
+
+      if (!isCorrectPage) {
+        const targetPage = lang === "en" ? "index_en.html" : "index.html";
+        const queryString = [];
+        if (lang) queryString.push(`lang=${lang}`);
+        if (mode) queryString.push(`mode=${mode}`);
+        const queryPart =
+          queryString.length > 0 ? `?${queryString.join("&")}` : "";
+        window.location.href = targetPage + queryPart;
+        return;
+      }
+
+      // 모드 설정 (기존 코드 유지)
+      if (mode === "sparta") {
+        document.documentElement.style.setProperty(
+          "--main-organization-color",
+          "#E8344E",
+        );
+        document.documentElement.style.setProperty(
+          "--sub-organization-color",
+          "#FAD6DC",
+        );
+        document.documentElement.style.setProperty(
+          "--main-svg-filter",
+          "invert(30%) sepia(44%) saturate(5563%) hue-rotate(335deg) brightness(96%) contrast(89%)",
+        );
+        document.documentElement.style.setProperty("--accent-color", "#E8344E");
+        document.documentElement.style.setProperty("--accent-light-color", "#FAD6DC");
+        updateLogos("image/sparta-logo.png");
+      }
+    }
+
+    function getUrlParameter(name) {
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+      var results = regex.exec(location.search);
+      return results === null
+        ? ""
+        : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+    function getUpdatedQueryString(lang, mode) {
+      let queryString = "";
+      if (mode) {
+        queryString += `?mode=${mode}`;
+      }
+      return queryString;
+    }
+
+    function updateLogos(logoSrc) {
+      const sideBarLogo = document.querySelector(".side-bar-logo");
+      const introLogo = document.querySelector(".intro-logo");
+
+      if (sideBarLogo) {
+        sideBarLogo.src = logoSrc;
+      }
+      if (introLogo) {
+        introLogo.src = logoSrc;
+      }
+    }
+  </script>
+</body>
+
+</html>
