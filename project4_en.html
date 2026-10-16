@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light only" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://seongzzang.github.io/resume/index.html?lang=ko" />
     <meta property="og:title" content="Seonghye Yang's Resume" />
@@ -17,6 +18,7 @@
     <title>Seonghye Yang's Resume</title>
     <style>
         :root {
+            color-scheme: light;
             --main-bg-color: #E2ECD9;
             --main-font-color: #1d1f20;
             --main-organization-color: #799E68;
@@ -44,7 +46,7 @@
 
         .project-card {
             margin: var(--card-margin);
-            height: var(--card-height);
+            min-height: var(--card-height);
             border-radius: var(--card-border-radius);
             background: var(--main-bg-color);
             box-shadow: 0 0.3rem 1.3rem 0 rgba(0, 0, 0, 0.2);
@@ -54,8 +56,8 @@
                 "name name image"
                 "icons tool image"
                 "bottom bottom bottom";
-            grid-template-rows: 3.1rem 15.1rem 8.3rem 3.1rem;
-            grid-template-columns: 15.6rem 15.6rem 1fr;
+            grid-template-rows: 3.1rem minmax(15.1rem, auto) minmax(8.3rem, auto) 3.1rem;
+            grid-template-columns: 1fr 1fr 2fr;
             overflow: hidden;
         }
 
@@ -94,7 +96,7 @@
 
         .project-card-image {
             grid-area: image;
-            padding: 0.6rem;
+            padding: 1rem;
             border-right: none;
             border-bottom: none;
             width: 100%;
@@ -127,12 +129,13 @@
         .project-github-link {
             display: flex;
             align-items: center;
+            padding: 0.3rem 0;
             gap: 0.6rem;
         }
 
         .project-github-link a {
             color: var(--main-font-color);
-            font-size: 0.6rem;
+            font-size: 0.8rem;
             text-decoration: none;
         }
 
@@ -146,7 +149,7 @@
         }
 
         .project-content-detail {
-            font-size: 0.6rem;
+            font-size: 0.8rem;
         }
 
         .project-card-tool {
@@ -161,25 +164,26 @@
 
         .project-title {
             color: var(--main-font-color);
-            font-size: 2.3rem;
+            font-size: 1.8rem;
+            font-weight: bold;
             line-height: normal;
         }
 
         .project-content {
             color: var(--text-color-secondary);
-            font-size: 0.7rem;
-            line-height: 1.4rem;
+            font-size: 0.9rem;
+            line-height: 1.8rem;
         }
 
         .project-content-detail {
             color: var(--text-color-secondary);
-            font-size: 0.6rem;
+            font-size: 0.8rem;
             line-height: normal;
         }
 
         .project-tool-detail {
             color: var(--main-font-color);
-            font-size: 0.6rem;
+            font-size: 0.8rem;
             line-height: normal;
         }
 
@@ -254,6 +258,7 @@
         }
 
         .detail-card {
+            background-color: #ffffff;
             border-top: 1px solid var(--border-color);
             display: grid;
             grid-template-areas:
@@ -305,7 +310,7 @@
 
         .detail-card-title {
             color: var(--main-font-color);
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             font-weight: bold;
             margin-bottom: 1rem;
             display: inline-block;
@@ -318,7 +323,7 @@
         .detail-card-ts {
             grid-area: ts;
             padding: 3.1rem;
-            font-size: 0.8rem;
+            font-size: 1rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -331,7 +336,7 @@
             align-items: center;
             gap: 0.8rem;
             border-radius: 1.8rem;
-            font-size: 0.8rem;
+            font-size: 1rem;
             background: var(--accent-color);
             color: var(--main-font-color);
             width: fit-content;
@@ -340,14 +345,14 @@
 
         .project-card-detail {
             color: var(--main-font-color);
-            font-size: 0.8rem;
+            font-size: 1rem;
             line-height: normal;
         }
 
         .project-card-ex {
             color: var(--text-color-secondary);
             font-family: var(--font-family-main);
-            font-size: 0.8rem;
+            font-size: 1rem;
             line-height: normal;
             margin: 0.3rem 0 0.8rem 1.1rem;
         }
@@ -392,7 +397,7 @@
 
             .project-content {
                 padding: 0 1rem;
-                font-size: 0.9rem;
+                font-size: 1.1rem;
                 line-height: 1.5;
             }
 
@@ -489,23 +494,60 @@
         .project-content-detail,
         .project-card-ex {
             color: var(--text-color-secondary);
-            font-size: 0.8rem;
+            font-size: 1rem;
             line-height: normal;
         }
 
         .project-content {
-            font-size: 0.7rem;
-            line-height: 1.4rem;
+            font-size: 0.9rem;
+            line-height: 1.8rem;
         }
 
         .project-content-detail {
-            font-size: 0.6rem;
+            font-size: 0.8rem;
         }
         .project-icon,
         .project-tool-point,
         .project-prev,
         .project-next {
             filter: var(--main-svg-filter);
+        }
+    
+        .project-div-image {
+            cursor: zoom-in;
+            transition: transform 0.25s ease;
+        }
+
+        .project-picture.center .project-div-image:hover {
+            transform: scale(1.04);
+        }
+
+        .image-popup {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.75);
+            cursor: zoom-out;
+        }
+
+        .image-popup.open {
+            display: flex;
+        }
+
+        .image-popup img {
+            max-width: 92vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 0.9rem;
+            background: #ffffff;
+            box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.5);
+        }
+    
+        .project-card-ex {
+            line-height: 1.5;
         }
     </style>
 </head>
@@ -753,6 +795,24 @@
         }
 
     </script>
-</body>
+    <div class="image-popup" id="imagePopup"><img id="imagePopupImg" alt="" /></div>
+    <script>
+        (function () {
+            var popup = document.getElementById("imagePopup");
+            var popupImg = document.getElementById("imagePopupImg");
+            document.addEventListener("click", function (e) {
+                var t = e.target;
+                if (t.classList && t.classList.contains("project-div-image")) {
+                    popupImg.src = t.src;
+                    popup.classList.add("open");
+                } else if (popup.classList.contains("open")) {
+                    popup.classList.remove("open");
+                }
+            });
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape") popup.classList.remove("open");
+            });
+        })();
+    </script></body>
 
 </html>

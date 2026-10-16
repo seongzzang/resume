@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light only" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://seongzzang.github.io/resume/index_en.html?lang=en" />
   <meta property="og:title" content="Seonghye Yang's Resume" />
@@ -19,6 +20,7 @@
     @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
     :root {
+      color-scheme: light;
       --main-organization-color: #799E68;
       --sub-organization-color: #D3E7C2;
       --main-svg-filter: invert(66%) sepia(20%) saturate(581%) hue-rotate(58deg) brightness(91%) contrast(91%);
@@ -200,9 +202,9 @@
 
     .info-detail-exp {
       color: var(--secondary-font-color);
-      font-size: 0.700625rem;
+      font-size: 0.85rem;
       letter-spacing: 0;
-      line-height: 1rem;
+      line-height: 1.2rem;
       word-break: break-word;
       flex-grow: 1;
     }
@@ -493,7 +495,7 @@
 
     .intro-logo {
       position: absolute;
-      opacity: 20%;
+      opacity: 10%;
       width: 40.0703125rem;
       height: 13.125rem;
       top: 16.31875rem;
@@ -528,13 +530,14 @@
     }
 
     .intro-content {
-      position: relative;
-      width: 29.1rem;
-      height: 22.25rem;
-      top: 3.578125rem;
-      left: 3.3rem;
+      position: absolute;
+      width: 28.8rem;
+      height: 100%;
+      top: 0;
+      left: 3.69rem;
       display: flex;
       flex-direction: column;
+      justify-content: center;
     }
 
     .intro-quote {
@@ -555,9 +558,9 @@
     .intro-text-detail {
       width: 28.8rem;
       color: var(--secondary-font-color);
-      font-size: 0.9rem;
+      font-size: 1.0rem;
       letter-spacing: 0;
-      line-height: normal;
+      line-height: 1.5rem;
     }
 
     .intro-row-line {
@@ -590,18 +593,18 @@
     .exp-title {
       display: flex;
       align-items: center;
-      margin-bottom: 1.3rem;
+      margin-bottom: 1.5rem;
     }
 
     .exp-img {
-      width: 1.7rem;
-      height: 1.4rem;
-      margin-right: 0.5rem;
+      width: 1.9rem;
+      height: 1.6rem;
+      margin-right: 0.6rem;
     }
 
     .exp-text {
       color: var(--main-font-color);
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       letter-spacing: 0;
       line-height: normal;
       text-align: center;
@@ -626,7 +629,7 @@
       width: 19.7rem;
       border-radius: 1rem;
       background: var(--sub-organization-color);
-      padding: 0.8rem;
+      padding: 1rem;
       min-width: 33.33%;
       display: flex;
       flex-direction: column;
@@ -681,11 +684,11 @@
     .exp-card-period-wrapper {
       width: fit-content;
       min-width: 3.4rem;
-      min-height: 1.2rem;
+      min-height: 1.5rem;
       border-radius: 0.4rem;
       background: var(--accent-color);
       margin: 0 auto 0.8rem;
-      padding: 0.1rem 0.5rem;
+      padding: 0.15rem 0.6rem;
       display: inline-flex;
       justify-content: center;
       align-items: center;
@@ -693,7 +696,7 @@
 
     .exp-card-period {
       color: var(--main-font-color);
-      font-size: 0.6rem;
+      font-size: 0.7rem;
       line-height: 1.2;
       white-space: nowrap;
       letter-spacing: 0;
@@ -712,7 +715,7 @@
     .exp-card-term {
       text-align: center;
       color: var(--secondary-font-color);
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       line-height: 1.2;
       letter-spacing: 0;
       margin: 0 auto 1rem;
@@ -721,12 +724,11 @@
     .exp-card-team {
       width: fit-content;
       min-width: 3.4rem;
-      min-height: 1.2rem;
-      height: 0.9rem;
+      min-height: 1.5rem;
       border-radius: 0.4rem;
       background: var(--accent-color);
       margin: 0 auto 0.8rem;
-      padding: 0.1rem 0.5rem;
+      padding: 0.15rem 0.6rem;
       display: inline-flex;
       justify-content: center;
       align-items: center;
@@ -734,7 +736,7 @@
 
     .exp-card-team-name {
       color: var(--main-font-color);
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       line-height: 1.2;
       text-align: center;
       letter-spacing: 0;
@@ -761,7 +763,7 @@
       width: auto;
       max-width: 14.3rem;
       color: var(--main-font-color);
-      font-size: 0.7rem;
+      font-size: 0.85rem;
       line-height: 1.4;
       letter-spacing: 0;
       word-break: break-word;
@@ -783,12 +785,11 @@
     .exp-card-proj {
       width: fit-content;
       min-width: 3.4rem;
-      min-height: 1.2rem;
-      height: 0.9rem;
+      min-height: 1.5rem;
       border-radius: 0.4rem;
       background: var(--accent-color);
       margin: 0 auto 0.8rem;
-      padding: 0.1rem 0.5rem;
+      padding: 0.15rem 0.6rem;
       display: inline-flex;
       justify-content: center;
       align-items: center;
@@ -796,7 +797,7 @@
 
     .exp-card-proj-name {
       color: var(--main-font-color);
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       line-height: 1.2;
       white-space: nowrap;
       letter-spacing: 0;
@@ -812,7 +813,7 @@
 
     .exp-card-task-detail-text {
       color: var(--main-font-color);
-      font-size: 0.7rem;
+      font-size: 0.85rem;
       line-height: 1.4;
       letter-spacing: 0;
       word-break: break-word;
@@ -882,6 +883,7 @@
       height: auto;
       border-radius: 0 0 0.9rem 0.9rem;
       border: 0.1rem solid var(--main-organization-color);
+      background: var(--highlight-color);
       padding: 1.3rem 1.6rem;
       flex-grow: 1;
       display: flex;
@@ -897,7 +899,7 @@
 
     .proj-content-text {
       color: var(--secondary-font-color);
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       line-height: 1.4;
       overflow: hidden;
       display: -webkit-box;
@@ -1099,6 +1101,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        position: relative;
         width: 100%;
         color: #81898f;
         top: 0;
@@ -1114,7 +1117,7 @@
       }
 
       .intro-text {
-        font-size: 14px;
+        font-size: 18px;
         width: 100%;
         word-wrap: break-word;
         text-align: center;
@@ -1122,7 +1125,8 @@
       }
 
       .intro-text-detail {
-        font-size: 10px;
+        font-size: 12px;
+        line-height: 1.6;
         width: 100%;
         word-wrap: break-word;
         top: 7rem;
@@ -1181,11 +1185,11 @@
       .exp-card-period-wrapper {
         width: fit-content;
         min-width: 3.4rem;
-        height: 0.9rem;
+        min-height: 1.4rem;
         border-radius: 0.4rem;
         background: var(--accent-color);
         margin: 0 auto 0.4rem;
-        padding: 0.1rem 0.5rem;
+        padding: 0.1rem 0.6rem;
         display: inline-flex;
         justify-content: center;
         align-items: center;
@@ -1193,8 +1197,8 @@
 
       .exp-card-period {
         color: var(--main-font-color);
-        font-size: 0.5rem;
-        line-height: normal;
+        font-size: 0.65rem;
+        line-height: 1.2;
         white-space: nowrap;
         letter-spacing: 0;
       }
@@ -1278,7 +1282,7 @@
       }
 
       .proj-content-text {
-        font-size: 12px;
+        font-size: 14px;
         line-height: 1.4;
       }
 
@@ -1326,7 +1330,7 @@
           <div class="info-detail">
             <object class="info-detail-icon svg-filter" data="image/detail-1.svg" color="red"></object>
             <div class="info-detail-exp font-regular">
-              Specializing in iOS app development, <br />building user-friendly
+              Specializing in iOS app development, building user-friendly
               applications with Swift.
             </div>
           </div>
@@ -1464,11 +1468,6 @@
             <div class="intro-picture-frame">
               <img class="intro-picture" src="image/profile_image.png" />
             </div>
-            <div class="intro-row-line"></div>
-
-            <div class="intro-row-line" style="top: 412px"></div>
-            <div class="intro-column-line"></div>
-            <div class="intro-column-line" style="left: 934px"></div>
             <img class="intro-star svg-filter" src="image/star.svg" />
             <div class="intro-content">
               <img class="intro-quote svg-filter" src="image/quote.svg" />
